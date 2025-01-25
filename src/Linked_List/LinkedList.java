@@ -132,4 +132,22 @@ public class LinkedList {
         }
         return false;
     }
+
+    /**
+     * Function that reverses a LL using a 3-pointer approach
+     */
+    public void reverse() {
+        Node currNode = this.head;
+        Node prev = null, next;
+        while (currNode != null) { // while the current node is not null
+            next = currNode.next; // set the next node to the node after currNode
+            currNode.next = prev; // point the current node to the previous node
+
+            prev = currNode; // set the previous node to the current node
+            currNode = next; // move the currNode pointer to the next node
+        }
+        // set the head of the LL to the previous node (this is the new head of the LL)
+        this.head = prev;
+    }
+
 }
