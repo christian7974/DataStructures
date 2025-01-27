@@ -198,5 +198,22 @@ public class LinkedList {
         this.length ++;
     }
 
+    /**
+     * Removes the Node at a given index
+     */
+    public void removeIndex(int index) {
+        if (index >= length || index < 0) return;
+        if (index == 0) { // if the index is the first one, set the head to the one after the head
+            this.head = this.head.next;
+            return;
+        }
+        // "skip" the node at the index you want to delete
+        Node previousNode = traverseToIndex(index - 1);
+        Node nodeToDelete = previousNode.next;
+        // set the previousNode's next to the node after the node you want to delete (skip it)
+        previousNode.next = nodeToDelete.next;
+        length --;
+    }
+
 
 }
