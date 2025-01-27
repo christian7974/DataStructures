@@ -2,7 +2,7 @@ package Linked_List;
 
 public class LinkedList {
     Node head;
-
+    int length = 0;
     /**
      * Constructor method of LinkedList class to accept 1 to n values
      *
@@ -10,6 +10,7 @@ public class LinkedList {
      */
     public LinkedList(int... values) {
         this.head = new Node(values[0]);
+        this.length = values.length;
         Node curr = this.head;
         for (int i = 1; i < values.length; i++) {
             curr.next = new Node(values[i]);
@@ -24,6 +25,13 @@ public class LinkedList {
         this.head = null;
     }
 
+    /**
+     * Getter method to retrieve the length of the LL
+     * @return the length of the LL
+     */
+    public int getLength() {
+        return this.length;
+    }
 
     /**
      * Display the LinkedList, separated by ->
@@ -50,6 +58,7 @@ public class LinkedList {
         Node newNode = new Node(data); // Create a new node
         newNode.next = head; // set the new node's next to the head (put it before the head)
         head = newNode; // set the head to the new node
+        this.length ++;
     }
 
     /**
@@ -68,6 +77,7 @@ public class LinkedList {
             curr = curr.next; // move on to the next node until the end
         }
         curr.next = newNode; // the last node is the new node
+        this.length ++;
     }
 
     /**
@@ -75,6 +85,7 @@ public class LinkedList {
      */
     public void deleteAtHead() {
         this.head = this.head.next;
+        this.length --;
     }
 
     /**
@@ -88,6 +99,7 @@ public class LinkedList {
         while (curr.next != null) { // while the next node is not null
             if (curr.next.data == target) { // if the node after is the target value
                 curr.next = curr.next.next; // set the next node to 2 nodes down
+                this.length --;
                 return true;
             }
             curr = curr.next; // iterate pointer node
@@ -113,6 +125,7 @@ public class LinkedList {
             currNode = currNode.next; // move the current node
         }
         currNode.next = null; // when the currentNode is one behind the last element, set its next to null
+        this.length --;
     }
 
     /**
@@ -135,19 +148,55 @@ public class LinkedList {
 
     /**
      * Function that reverses a LL using a 3-pointer approach
+     * Set the node's next pointer to the node before it
      */
     public void reverse() {
-        Node currNode = this.head;
-        Node prev = null, next;
-        while (currNode != null) { // while the current node is not null
-            next = currNode.next; // set the next node to the node after currNode
-            currNode.next = prev; // point the current node to the previous node
-
-            prev = currNode; // set the previous node to the current node
-            currNode = next; // move the currNode pointer to the next node
+        if (this.head == null) return;
+        Node first = this.head; // previous Node
+        Node second = first.next;
+        while (second != null) {
+            Node temp = second.next; // Temp helps us stay within the LL, moves to next node
+            second.next = first; // set the pointer to the node prior
+            first = second; // previous Node moves
+            second = temp; // second node becomes the temp
         }
-        // set the head of the LL to the previous node (this is the new head of the LL)
-        this.head = prev;
+        this.head.next = null;
+        this.head = first;
     }
+
+    /**
+     * Method to traverse to an index within the LL
+     *
+     * @param index the index to traverse to (0 based)
+     * @return the Node located at that index
+     */
+    public Node traverseToIndex(int index) {
+        if (index > length || index < 0) return null; // unable to iterate to node outside LL
+        int counter = 0;
+        Node currentNode = this.head;
+        while (counter != index) {
+            currentNode = currentNode.next;
+            counter ++;
+        }
+        return currentNode;
+    }
+
+    /**
+     * Inserts a Node at a certain index
+     *
+     * @param value the value of the Node to be inserted
+     * @param index the index at which to insert the node at
+     */
+    public void insert(int value, int index) {
+        if (index > length || index < 0) return; // return null if outside LL
+        Node newNode = new Node(value);
+        Node leader = traverseToIndex(index - 1); // the node before the index to be inserted
+        Node holdingPointer = leader.next; // temp pointer (1 node after where the user wants to insert)
+        // connect the newNode by setting the leader's next to the newNode, the newNode's next to the holding pointer
+        leader.next = newNode;
+        newNode.next = holdingPointer;
+        this.length ++;
+    }
+
 
 }

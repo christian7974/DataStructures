@@ -3,14 +3,15 @@ import Linked_List.LinkedList;
 public class Main {
 
   public static void main(String[] args) {
-    LinkedList list = new LinkedList(1, 2, 3, 4);
-
-    int valueToFind = 5;
-    list.reverse();
+    LinkedList list = new LinkedList(1, 2, 3, 5);
+    System.out.println(list.getLength());
+    list.insert(4, 3);
+    System.out.println(list.getLength());
     list.printList();
 
 
     LinkedList list2 = new LinkedList();
-    System.out.println(list2.search(valueToFind) ? valueToFind + " Found" : valueToFind + " Not Found");
+    list2.push(4);
+    System.out.println("The length is " + list2.getLength());
   }
 }
