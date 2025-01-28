@@ -1,4 +1,4 @@
-package Stack_LL;
+package Stack_Queue_LL;
 
 import Linked_List.Node;
 
