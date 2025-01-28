@@ -1,6 +1,4 @@
 # Data Structures Portfolio
-## Technologies Used
-- Java
 
 ## Inspiration
 I wanted to teach myself Java as I did not have too many projects with Object-Oriented Programming. I chose Java over
@@ -11,6 +9,9 @@ I thought the best way of practicing Java while keeping my programming skills sh
 and algorithms, since those are very important pillars in computer science and software engineering. I also wanted
 to work on JavaDoc comments so that people understand what a given method does and some of the intermediate steps
 of those methods. 
+
+## Technologies Used
+- Java
 
 ## Current DS/Algorithms Implemented
 While this is not an exhaustive list of every data structure and algorithm, these are the ones that I have seen the most
