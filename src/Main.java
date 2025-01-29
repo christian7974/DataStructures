@@ -11,6 +11,6 @@ public class Main {
     Stack stack1 = new Stack();
     Queue queue1 = new Queue();
     HashTable hashTable1 = new HashTable(20);
-    BinarySearchTree bst1 = new BinarySearchTree();
+    BinarySearchTree tree = new BinarySearchTree();
   }
 }

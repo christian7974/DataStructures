@@ -15,12 +15,14 @@ of those methods.
 
 ## Current DS/Algorithms Implemented
 While this is not an exhaustive list of every data structure and algorithm, these are the ones that I have seen the most
-in my classes and have gotten fairly comfortable with.
+in my classes and have gotten fairly comfortable with. 
+
 ### Currently Implemented Data Structures
 - Linked Lists
 - Stacks
 - Queues
 - Hash Tables
+- Binary Trees
 
 ### Currently Implemented Algorithms
 - None at the moment
@@ -38,7 +40,7 @@ as it would help me learn Java by exploring other sources of documentation.
 ## Planned Data Structures/Algorithms
 Some planned data structures and algorithms include but are not limited to:
 - Trees
-  - Binary trees, Binary Heaps/Priority Queues
+  - Binary Heaps/Priority Queues
 - Graphs
 - Bubble, Selection, Insertion, Quick and Merge Sort
 - Breadth- and Depth-First sorting/traversal
