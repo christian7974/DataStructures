@@ -20,6 +20,7 @@ in my classes and have gotten fairly comfortable with.
 - Linked Lists
 - Stacks
 - Queues
+- Hash Tables
 
 ### Currently Implemented Algorithms
 - None at the moment
@@ -36,7 +37,6 @@ as it would help me learn Java by exploring other sources of documentation.
 
 ## Planned Data Structures/Algorithms
 Some planned data structures and algorithms include but are not limited to:
-- Hash Tables
 - Trees
   - Binary trees, Binary Heaps/Priority Queues
 - Graphs

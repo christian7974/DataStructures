@@ -29,6 +29,7 @@ public class Queue {
 
     /**
      * Adds a value to the end of the queue
+     * Time Complexity: O(1)
      *
      * @param value the number to be inserted to the back of the queue
      */
@@ -45,6 +46,7 @@ public class Queue {
 
     /**
      * Remove the first thing in the queue
+     * Time Complexity: O(1)
      */
     public void dequeue() {
         if (this.length == 0) {return;}
@@ -56,6 +58,7 @@ public class Queue {
 
     /**
      * Look at the value that is first in the queue
+     * Time Complexity: O(1)
      *
      * @return the first Node in the queue
      */

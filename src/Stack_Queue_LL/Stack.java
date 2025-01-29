@@ -40,6 +40,7 @@ public class Stack {
 
     /**
      * Method that returns the Node at the top of the stack
+     * Time Complexity: O(1)
      *
      * @return the top of the Stack
      */
@@ -49,6 +50,7 @@ public class Stack {
 
     /**
      * Add a new Node to the top of the Stack
+     * Time Complexity: O(1)
      *
      * @param value the value to be inserted at the top of the stack
      */
@@ -67,6 +69,7 @@ public class Stack {
 
     /**
      * Remove the top of the Stack
+     * Time Complexity: O(1)
      */
     public void pop() {
         if (this.length == 0) return;

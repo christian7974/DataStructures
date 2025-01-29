@@ -51,6 +51,7 @@ public class LinkedList {
 
     /**
      * Add an integer to the beginning of the LinkedList
+     * Time Complexity: O(1)
      *
      * @param data integer to be added to the LinkedList
      */
@@ -63,6 +64,7 @@ public class LinkedList {
 
     /**
      * Add a value to the end of the LinkedList
+     * Time Complexity: O(n) but if there was a tail node, this would be O(1)
      *
      * @param data integer to be added to the end of the LinkedList
      */
@@ -82,6 +84,7 @@ public class LinkedList {
 
     /**
      * Delete the first item in the LinkedList
+     * Time Complexity: O(1)
      */
     public void deleteAtHead() {
         this.head = this.head.next;
@@ -90,6 +93,7 @@ public class LinkedList {
 
     /**
      * Find a piece of data in the LinkedList and remove it
+     * Time Complexity: O(n)
      *
      * @param target the value to find and delete in the LL
      * @return returns true if item found and deleted, false if otherwise
@@ -110,6 +114,7 @@ public class LinkedList {
 
     /**
      * Delete the last item in the LinkedList (pop)
+     * Time Complexity: O(n)
      */
     public void pop() {
 
@@ -130,6 +135,7 @@ public class LinkedList {
 
     /**
      * Search the LinkedList for an item
+     * Time Complexity: O(n)
      *
      * @param target integer to search for in the LinkedList
      * @return boolean to show if the integer exists in the Linked List
@@ -149,6 +155,7 @@ public class LinkedList {
     /**
      * Function that reverses a LL using a 3-pointer approach
      * Set the node's next pointer to the node before it
+     * Time Complexity: O(n)
      */
     public void reverse() {
         if (this.head == null) return;
@@ -166,6 +173,7 @@ public class LinkedList {
 
     /**
      * Method to traverse to an index within the LL
+     * Time Complexity: O(n)
      *
      * @param index the index to traverse to (0 based)
      * @return the Node located at that index
@@ -183,6 +191,7 @@ public class LinkedList {
 
     /**
      * Inserts a Node at a certain index
+     * Time Complexity: O(n)
      *
      * @param value the value of the Node to be inserted
      * @param index the index at which to insert the node at
@@ -200,6 +209,7 @@ public class LinkedList {
 
     /**
      * Removes the Node at a given index
+     * Time Complexity: O(n)
      */
     public void removeIndex(int index) {
         if (index >= length || index < 0) return;
