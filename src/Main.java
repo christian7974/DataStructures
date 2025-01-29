@@ -2,6 +2,7 @@ import Hash_Table.HashTable;
 import Linked_List.LinkedList;
 import Stack_Queue_LL.Stack;
 import Stack_Queue_LL.Queue;
+import Trees.BinarySearchTree;
 
 public class Main {
 
@@ -10,5 +11,6 @@ public class Main {
     Stack stack1 = new Stack();
     Queue queue1 = new Queue();
     HashTable hashTable1 = new HashTable(20);
+    BinarySearchTree bst1 = new BinarySearchTree();
   }
 }
