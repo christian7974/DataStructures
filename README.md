@@ -25,7 +25,8 @@ in my classes and have gotten fairly comfortable with.
 - Binary Trees
 
 ### Currently Implemented Algorithms
-- None at the moment
+- Breadth First Search
+- Depth First Search (In-Order)
 
 ## How to Contribute
 Since this is my first time using Java, it may be evident that I could have implemented a method a different way or

@@ -1,6 +1,10 @@
 package Trees;
 
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     TNode root;
 
@@ -35,7 +39,8 @@ public class BinarySearchTree {
                 }
             }
         }
-    };
+    }
+
 
     /**
      * Method to look up a value in the BST
@@ -57,7 +62,8 @@ public class BinarySearchTree {
             }
         }
         return null;
-    };
+    }
+
 
     /**
      * Method to remove a node from the BST
@@ -89,12 +95,12 @@ public class BinarySearchTree {
                         // if the node to delete is a left child, make parent's left point to the NTD's left
                         if (parentNode.value > nodeToDelete.value) {
                             parentNode.left = nodeToDelete.left;
-                        // else, make parent's right point to the NTD's left
+                            // else, make parent's right point to the NTD's left
                         } else {
                             parentNode.right = nodeToDelete.left;
                         }
                     }
-                // option 2: right child does not have a left child, promote the right child to take deleted node's place
+                    // option 2: right child does not have a left child, promote the right child to take deleted node's place
                 } else if (nodeToDelete.right.left == null) {
                     nodeToDelete.right.left = nodeToDelete.left;
                     if (parentNode == null) {
@@ -103,12 +109,12 @@ public class BinarySearchTree {
                     } else {
                         if (nodeToDelete.value < parentNode.value) {
                             parentNode.left = nodeToDelete.right;
-                        // else, make right child a right child of the parent
+                            // else, make right child a right child of the parent
                         } else {
                             parentNode.right = nodeToDelete.right;
                         }
                     }
-                // option 3: right child that has a left child
+                    // option 3: right child that has a left child
                 } else {
                     // find the right child's left most child (leftmost node in right subtree)
                     TNode leftMost = nodeToDelete.right.left;
@@ -149,4 +155,52 @@ public class BinarySearchTree {
     public TNode getRoot() {
         return this.root;
     }
+
+    /**
+     * Method that performs BFS on a tree (shortest path between 2 nodes)
+     * Time Complexity: O(V) : V is the number of vertices (nodes) in the tree or O(V+E) : E is number of edges in
+     * a graph
+     *
+     * @return list that has the nodes in order
+     */
+    public ArrayList<TNode> BFS() {
+        TNode currentNode = this.root;
+        ArrayList<TNode> list = new ArrayList<TNode>(); // list that is the order of the nodes that we visited
+        Queue<TNode> queue = new LinkedList<TNode>(); // queue that tells us which nodes we have to check for next
+        queue.add(currentNode); // get the queue started
+        while (!queue.isEmpty()) {
+            currentNode = queue.poll(); // set CN to node @ front of queue and remove it from queue
+            list.add(currentNode);
+            // if the CN has a left child, add it
+            if (currentNode.left != null) {queue.add(currentNode.left);}
+            // if the CN has a right child, add it
+            if (currentNode.right != null) {queue.add(currentNode.right);}
+        }
+        return list;
+    }
+
+    /**
+     * Method to perform DFS In Order Traversal on a tree (Useful for mazes)
+     * Time Complexity: O(v) : v is the number of nodes in the tree
+     *
+     * @return list of nodes visited In-Order
+     */
+    public ArrayList<TNode> DFSInOrder() {
+        return inOrderTraversal(this.root, new ArrayList<>());
+    }
+
+    /**
+     * Method to perform In Order Traversal Recursively
+     *
+     * @param node the current node of the tree being looked at
+     * @param list the list that accumulates nodes In Order
+     * @return list containing the nodes that we have found
+     */
+    public ArrayList<TNode> inOrderTraversal(TNode node, ArrayList<TNode> list) {
+        if (node.left != null) {inOrderTraversal(node.left, list);} // if left node exists, keep going left
+        list.add(node); // add the node to the results list
+        if (node.right != null) {inOrderTraversal(node.right, list);} // if right node exists, keep going right
+        return list;
+    }
+
 }
