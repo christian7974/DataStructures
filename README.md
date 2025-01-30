@@ -27,6 +27,7 @@ in my classes and have gotten fairly comfortable with.
 ### Currently Implemented Algorithms
 - Breadth First Search
 - Depth First Search (In-, Pre-, Post-Order)
+- Bubble, Selection and Insertion Sorts
 
 ## How to Contribute
 Since this is my first time using Java, it may be evident that I could have implemented a method a different way or
@@ -43,6 +44,6 @@ Some planned data structures and algorithms include but are not limited to:
 - Trees
   - Binary Heaps/Priority Queues
 - Graphs
-- Bubble, Selection, Insertion, Quick and Merge Sort
+- Quick and Merge Sort
 - Dynamic Programming
 

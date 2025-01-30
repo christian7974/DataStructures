@@ -1,9 +1,5 @@
 package Sorts;
 
-import Trees.TNode;
-
-import java.util.ArrayList;
-
 public class BubbleSort {
 
     /**

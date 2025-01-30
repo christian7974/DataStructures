@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import static Sorts.BubbleSort.bubbleSort;
 import static Sorts.SelectionSort.selectionSort;
+import static Sorts.InsertionSort.insertionSort;
 
 public class Main {
 
@@ -18,10 +19,5 @@ public class Main {
     Queue queue1 = new Queue();
     HashTable hashTable1 = new HashTable(20);
     BinarySearchTree tree = new BinarySearchTree();
-    int[] list1 = {2, 5, 3, 1, 4};
-    selectionSort(list1);
-    for (int i : list1) {
-      System.out.print(i + " ");
-    }
   }
 }
