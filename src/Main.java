@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import static Sorts.BubbleSort.bubbleSort;
 import static Sorts.SelectionSort.selectionSort;
 import static Sorts.InsertionSort.insertionSort;
+import static Sorts.QuickSort.quickSort;
 
 public class Main {
 
@@ -19,5 +20,7 @@ public class Main {
     Queue queue1 = new Queue();
     HashTable hashTable1 = new HashTable(20);
     BinarySearchTree tree = new BinarySearchTree();
+    int[] array = {5, 8, 9, 3, 1};
+    quickSort(array, 0, array.length - 1);
   }
 }
