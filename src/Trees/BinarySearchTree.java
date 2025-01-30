@@ -172,15 +172,19 @@ public class BinarySearchTree {
             currentNode = queue.poll(); // set CN to node @ front of queue and remove it from queue
             list.add(currentNode);
             // if the CN has a left child, add it
-            if (currentNode.left != null) {queue.add(currentNode.left);}
+            if (currentNode.left != null) {
+                queue.add(currentNode.left);
+            }
             // if the CN has a right child, add it
-            if (currentNode.right != null) {queue.add(currentNode.right);}
+            if (currentNode.right != null) {
+                queue.add(currentNode.right);
+            }
         }
         return list;
     }
 
     /**
-     * Method to perform DFS In Order Traversal on a tree (Useful for mazes)
+     * Method to perform DFS In Order Traversal on a tree
      * Time Complexity: O(v) : v is the number of nodes in the tree
      *
      * @return list of nodes visited In-Order
@@ -190,16 +194,76 @@ public class BinarySearchTree {
     }
 
     /**
-     * Method to perform In Order Traversal Recursively
+     * Method to perform In-Order Traversal Recursively
      *
      * @param node the current node of the tree being looked at
      * @param list the list that accumulates nodes In Order
      * @return list containing the nodes that we have found
      */
     public ArrayList<TNode> inOrderTraversal(TNode node, ArrayList<TNode> list) {
-        if (node.left != null) {inOrderTraversal(node.left, list);} // if left node exists, keep going left
+        if (node.left != null) {
+            inOrderTraversal(node.left, list);
+        } // if left node exists, keep going left
         list.add(node); // add the node to the results list
-        if (node.right != null) {inOrderTraversal(node.right, list);} // if right node exists, keep going right
+        if (node.right != null) {
+            inOrderTraversal(node.right, list);
+        } // if right node exists, keep going right
+        return list;
+    }
+
+    /**
+     * Method to perform DFS Pre-Order Traversal on a tree (parents, then child)
+     * Time Complexity: O(v) : v is the number of nodes in the tree
+     *
+     * @return list of nodes visited Pre-Order
+     */
+    public ArrayList<TNode> DFSPreOrder() {
+        return preOrderTraversal(this.root, new ArrayList<>());
+    }
+
+    /**
+     * Method to perform Pre-Order Traversal Recursively
+     *
+     * @param node the current node of the tree being looked at
+     * @param list the list that accumulates nodes Pre-Order
+     * @return list containing the nodes that we have found
+     */
+    public ArrayList<TNode> preOrderTraversal(TNode node, ArrayList<TNode> list) {
+        list.add(node);
+        if (node.left != null) {
+            preOrderTraversal(node.left, list);
+        }
+        if (node.right != null) {
+            preOrderTraversal(node.right, list);
+        }
+        return list;
+    }
+
+    /**
+     * Method to perform DFS Post-Order Traversal on a tree (child is checked after parent, that's why root is last)
+     * Time Complexity: O(v) : v is the number of nodes in the tree
+     *
+     * @return list of nodes visited Post-Order
+     */
+    public ArrayList<TNode> DFSPostOrder() {
+        return postOrderTraversal(this.root, new ArrayList<>());
+    }
+
+    /**
+     * Method to perform Post-Order Traversal Recursively
+     *
+     * @param node the current node of the tree being looked at
+     * @param list the list that accumulates nodes Post-Order
+     * @return list containing the nodes that we have found
+     */
+    public ArrayList<TNode> postOrderTraversal(TNode node, ArrayList<TNode> list) {
+        if (node.left != null) {
+            postOrderTraversal(node.left, list);
+        }
+        if (node.right != null) {
+            postOrderTraversal(node.right, list);
+        }
+        list.add(node);
         return list;
     }
 
