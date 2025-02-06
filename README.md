@@ -1,14 +1,15 @@
 # Data Structures Portfolio
 
 ## Inspiration
-I wanted to teach myself Java as I did not have too many projects with Object-Oriented Programming. I chose Java over
+I wanted to teach myself Java as I did not have too many projects that involved Object-Oriented Programming. I chose Java over
 other object-oriented languages since it lends itself to web application development better than other languages
 such as C++ and C. 
 
 I thought the best way of practicing Java while keeping my programming skills sharp was to implement data structures
 and algorithms, since those are very important pillars in computer science and software engineering. I also wanted
 to work on JavaDoc comments so that people understand what a given method does and some of the intermediate steps
-of those methods. 
+of those methods. Hopefully, someone stumbles upon this repository, and it may help them understand a topic that may
+have been confusing or difficult to understand in class.
 
 ## Technologies Used
 - Java
@@ -28,6 +29,7 @@ in my classes and have gotten fairly comfortable with.
 - Breadth First Search
 - Depth First Search (In-, Pre-, Post-Order)
 - Bubble, Selection and Insertion Sorts
+  - Quick and Merge Sort
 
 ## How to Contribute
 Since this is my first time using Java, it may be evident that I could have implemented a method a different way or
@@ -44,6 +46,5 @@ Some planned data structures and algorithms include but are not limited to:
 - Trees
   - Binary Heaps/Priority Queues
 - Graphs
-- Quick and Merge Sort
 - Dynamic Programming
 

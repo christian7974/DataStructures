@@ -27,8 +27,8 @@ public class MergeSort {
 
     public static ArrayList<Integer> merge(ArrayList<Integer> left, ArrayList<Integer> right) {
         ArrayList<Integer> result = new ArrayList<>();
-        int i = 0;
-        int j = 0;
+        int i = 0; // counter for left subarray
+        int j = 0; // counter for right subarray
         while (i < left.size() && j < right.size()) { // as long as there are elements in both subarrays
             if (left.get(i) <= right.get(j)) { // if the element on the left is smaller, add it to the results array
                 result.add(left.get(i));
