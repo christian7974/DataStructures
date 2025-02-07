@@ -12,6 +12,7 @@ import static Sorts.SelectionSort.selectionSort;
 import static Sorts.InsertionSort.insertionSort;
 import static Sorts.QuickSort.quickSort;
 import static Sorts.MergeSort.mergeSort;
+import static Sorts.RadixSort.radixSort;
 
 public class Main {
 
@@ -23,8 +24,8 @@ public class Main {
     BinarySearchTree tree = new BinarySearchTree();
     int[] array = {5, 8, 9, 3, 1};
     quickSort(array, 0, array.length - 1);
-    ArrayList<Integer> list1 = new ArrayList<Integer>(List.of(12, 6, 3, 1, 4, 9, 2, 8));
-    ArrayList<Integer> sortedList = mergeSort(list1);
-    System.out.println(sortedList);
+    ArrayList<Integer> list1 = new ArrayList<Integer>(List.of(170, 45, 75, 90, 802, 24, 2, 66, 11, 98));
+    radixSort(list1);
+    System.out.println(list1);
   }
 }

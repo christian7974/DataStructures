@@ -30,6 +30,7 @@ in my classes and have gotten fairly comfortable with.
 - Depth First Search (In-, Pre-, Post-Order)
 - Bubble, Selection and Insertion Sorts
   - Quick and Merge Sort
+- Radix Sort
 
 ## How to Contribute
 Since this is my first time using Java, it may be evident that I could have implemented a method a different way or
